@@ -171,7 +171,7 @@ Function Emailv5 {
     $getSubject = $Subject + " " + (Get-Date).ToString("yyyy-MM-dd")
     $getBody = $Body + "`n`n`n" +
     "--`n" +
-    "Email Time: " + (Get-Date).ToString("yyyy/MM/dd HH:mm:ss") + "`n" + 
+    "Email Time: " + (Get-Date).ToString("yyyy-MM-dd HH:mm:ss") + "`n" + 
     "Script Name: " + (Split-Path $MyInvocation.PSCommandPath -Leaf) + "`n" + 
     "Computer Name: " + $env:computername
     $getAttachments = $Attachments
