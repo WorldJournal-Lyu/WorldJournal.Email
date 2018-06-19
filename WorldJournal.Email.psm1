@@ -17,7 +17,7 @@ v2 and v3 uses System.Net.Mail.MailMessage object which is compatiable with any 
 
 #>
 
-$xmlPath = (Split-Path (Split-Path ($MyInvocation.MyCommand.Path) -Parent) -Parent)+"\_DoNotRepository\"+(($MyInvocation.MyCommand.Name) -replace '.psm1', '.xml')
+$xmlPath = (Split-Path (Split-Path (Split-Path ($MyInvocation.MyCommand.Path) -Parent) -Parent) -Parent)+"\_DoNotRepository\"+(($MyInvocation.MyCommand.Name) -replace '.psm1', '.xml')
 [xml]$xml = Get-Content $xmlPath -Encoding UTF8
 $lyu = ($xml.Root.Email | Where-Object{$_.Name -eq 'lyu'}).MailAddress
 
