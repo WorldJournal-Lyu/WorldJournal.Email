@@ -105,6 +105,7 @@ Function Emailv2 {
     $SMTPClient = New-Object System.Net.Mail.SmtpClient($SMTPServer, $SMTPPort)
     $SMTPClient.EnableSsl = $true
     $SMTPClient.Credentials = New-Object System.Net.NetworkCredential($User, $Pass);
+    #[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { return $true }
     $SMTPClient.Send($Mail)
 }
 
